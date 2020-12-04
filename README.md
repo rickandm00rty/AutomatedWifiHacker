@@ -1,7 +1,7 @@
 # AutomatedWifiHacker
 Script to automatically navigate terminals and commands for hacking a local AP given the connected MAC of a client, AP Name, Channel, and AP MAC
 
-In this script, standard aircrack-ng tools were used (these can be found at https://github.com/aircrack-ng/aircrack-ng). This project serves as a meduim to understand WiFi hacking, not to present a robust or streamlined solution. If you wish to simply "hack away", other tools like WiFite are better options.
+In this script, standard aircrack-ng tools were used (these can be found at https://github.com/aircrack-ng/aircrack-ng). This project serves as a medium to understand WiFi hacking, not to present a robust or streamlined solution. If you wish to simply "hack away", other tools like WiFite are better options.
 
 Info Needed:
 MAC address of PC running aircrack-ng suite: 00:0F:B5:88:AC:82 (Sample)
