@@ -1,0 +1,12 @@
+##Setting up our planner to handle input from the user and "read" to our program:
+
+
+1. Start the script, enabling wrapper and setting WLAN interface to monitor mode (airmon-ng)
+
+2. Using subshell '(. ./secondscript.sh)' format, start airodump-ng to capture necessary devices in area
+
+3. Display list of AP's and MAC's for selection in Wrapper.py
+
+4. Selecting AP starts 3rd subshell, running aireplay-Ng Deauth. Once Deauth is captured, navigate to 4th shell
+
+5. This 4th shell is used to run the Deauth handshake through aircrack-ng and our wordlist file
