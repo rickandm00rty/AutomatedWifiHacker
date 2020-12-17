@@ -14,12 +14,9 @@ window.geometry('1000x500')
 window.grid_rowconfigure(0, weight=1)
 window.grid_columnconfigure(0, weight=1)
 
-#Generate AP List and Display
+#Generate AP List and Display - NEEDS WORK
 APList = Listbox(window, fg="Red", selectbackground='Green', selectmode=BROWSE)
 APList.insert(1, 'APLISTONE')
-APList.insert(2, 'APLISTONE')
-APList.insert(3, 'APLISTONE')
-APList.insert(4, 'APLISTONE')
 APList.grid(row=0, column=2)
 APList.place(relx=0.5, rely=0.5, anchor=CENTER)
 
