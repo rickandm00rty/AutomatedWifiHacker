@@ -1,41 +1,34 @@
-## Python wrapper for program
-
+# MAIN
 from tkinter import *
 import webbrowser
 import subprocess
+import sys, os
 
-#Place standard wireless card in monitoring mode on launch
-subprocess.run(['airmon-ng start wlan0'], shell=TRUE, capture_output=TRUE)
+#PLACE CARD IN MONITOR MODE
+#subprocess.run(['airmon-ng start wlan0'], shell=TRUE, capture_output=TRUE)
 
-#Scan AP's and write to APList object
-subprocess.run(['sudo iwlist scan > ./aplist.txt'],shell=TRUE)
-#Manually creating AP for testing
-subprocess.run(['echo "eduroam" > aplist.txt'], shell=TRUE)
-
-#Generate parent window
+#GENERATE PARENT WINDOW
 window = Tk()
 window.title("Kyle's WiFi PWNER Ver. 1")
-window.geometry('1000x500')
+window.geometry('500x250')
 window.grid_rowconfigure(0, weight=1)
 window.grid_columnconfigure(0, weight=1)
 
-#NEEDS SUBPROCESS TO GENERATE LIST
-#Generate List window, Pull data, Place window
+#GENERATE CHILD LIST & DISPLAY
 APList = Listbox(window, fg="Red", selectbackground='Green', selectmode=BROWSE)
-f = open('aplist.txt', "r")
+f = open(os.path.join(sys.path[0], "aplist.txt"), "r")
 for x in f:
     APList.insert(END,x)
 
 APList.grid(row=0, column=2)
 APList.place(relx=0.5, rely=0.5, anchor=CENTER)
 
-#On-Click, run the airodump-ng, write to a file
-def loadDefaults():
+#On-Click, RUN AIRODUMP TO GATHER HANDSHAKE
+def handshakeCap():
     btn.configure(text="Cracking....")
-    subprocess.run('')
 
-#Generate button, click to 'loadDefaults()'
-btn = Button(window, text="Crack my PW", activebackground="Red", command=loadDefaults)
+#BUTTON GENERATION, LINKS TO handshakeCap()
+btn = Button(window, text="Crack my PW", activebackground="Red", command=handshakeCap)
 btn.grid(row=9, column=0)
 btn.place(relx=0.5, rely=1, anchor=S)
 
